@@ -1,0 +1,111 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="collective.z3cform.wizard"
+      tal:omit-tag="">
+  
+<tal:widgets repeat="widget view/widgets/values">
+  <div class="row"
+       tal:define="hidden python:widget.mode == 'hidden'"
+       tal:omit-tag="hidden">
+
+    <metal:field use-macro="context/@@ploneform-macros/field" />
+    
+  </div>
+</tal:widgets>
+
+<script type="text/javascript">
+$(function($){
+  $( "#read_more" ).click(function() {
+    $( ".read_more" ).toggle( "slow", function() {
+      // Animation complete.
+    });
+  });
+
+  // Fullname
+  $('#personalinfo-widgets-fullname').attr('placeholder', $('#formfield-personalinfo-widgets-fullname  label').text().trim());
+  $('#formfield-personalinfo-widgets-fullname label').remove();
+
+  // Gender
+  $('#personalinfo-widgets-gender').attr('placeholder', $('#formfield-personalinfo-widgets-gender  label').text().trim());
+  $('#formfield-personalinfo-widgets-gender label').remove();
+
+  // Birthdate
+  $('#personalinfo-widgets-birthdate').attr('placeholder', $('#formfield-personalinfo-widgets-birthdate  label').text().trim());
+  $('#formfield-personalinfo-widgets-birthdate label').remove();
+
+  // Mobile
+  $('#personalinfo-widgets-mobile').attr('placeholder', $('#formfield-personalinfo-widgets-mobile  label').text().trim());
+  $('#formfield-personalinfo-widgets-mobile label').remove();
+
+  // Address 1
+  $('#address-widgets-address1').attr('placeholder', $('#formfield-address-widgets-address1 label').text().trim());
+  $('#formfield-address-widgets-address1 label').remove();
+
+  // Address 2
+  $('#address-widgets-address2').attr('placeholder', $('#formfield-address-widgets-address2 label').text().trim());
+  $('#formfield-address-widgets-address2 label').remove();
+
+  // Country
+  $('#address-widgets-country').attr('placeholder', $('#formfield-address-widgets-country label').text().trim());
+  $('#formfield-address-widgets-country label').remove();
+
+  // City
+  $('#address-widgets-city').attr('placeholder', $('#formfield-address-widgets-city label').text().trim());
+  $('#formfield-address-widgets-city label').remove();
+});
+</script>
+
+<style>
+  li.wizard-step-link { 
+    float: left;
+    display: block;
+    padding: 5px;ß
+  }
+  li.selected {
+    font-weight: bold;
+  }
+  div.form {clear: both;}
+</style>
+
+<tal:groups define="groups nocall:view/groups|nothing" repeat="group groups">
+  <fieldset class="group" tal:condition="group/widgets" tal:attributes="id string:fieldset-${group/prefix}">
+    <legend tal:content="group/label" />
+
+    <div tal:define="errors group/widgets/errors" tal:condition="errors">
+        <div tal:repeat="error errors">
+            <tal:block
+                condition="not:nocall:error/widget"
+                replace="structure error/render"
+                />
+        </div>
+    </div>
+
+    <tal:widgets repeat="widget group/widgets/values">
+      <div class="row"
+           tal:define="hidden python:widget.mode == 'hidden'"
+           tal:omit-tag="hidden">
+
+        <metal:field use-macro="context/@@ploneform-macros/field" />
+
+      </div>
+    </tal:widgets>
+  </fieldset>
+</tal:groups>
+
+<metal:use use-macro="context/@@ploneform-macros/actions" />
+
+<div tal:repeat="form view/subforms"
+     tal:content="structure form/render">
+</div>
+
+<p style="font-size: small; cursor: pointer;" id="read_more"
+   i18n:domain="canaimagnulinux.wizard" i18n:translate="">Information on data treatment</p>
+<div style="display: none; -webkit-border-radius: 6px; border: 1px solid gold"
+     class="read_more" i18n:domain="canaimagnulinux.wizard">
+  <h3 i18n:translate="">Data protection and the treatment of personal data</h3>
+  <p i18n:translate="">TODO</p>
+</div>  
+
+</html>

@@ -1,0 +1,23 @@
+<tal:block i18n:domain="canaimagnulinux.wizard"
+           tal:define="portal_url context/portal_url;">
+<style>
+  li.wizard-step-link { 
+    float: left;
+    display: block;
+    padding: 5px;ß
+  }
+  li.selected {
+    font-weight: bold;
+  }
+  div.form {clear: both;}    
+  </style>
+
+<h4 i18n:translate="">Well that was it!</h4>
+<p i18n:translate="">Now you are ready and you can start to explore
+  and participate in the portal. Is there something you want to change
+  or add to find all the "Settings" menu. Please click
+  <a tal:attributes="href string:${portal_url}/@@personal-information">here</a>
+  to view your pages.
+</p>
+
+</tal:block>

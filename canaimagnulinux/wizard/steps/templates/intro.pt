@@ -1,0 +1,27 @@
+<tal:block i18n:domain="canaimagnulinux.wizard">
+
+<style>
+  li.wizard-step-link { 
+    float: left;
+    display: block;
+    padding: 5px;ß
+  }
+  li.selected {
+    font-weight: bold;
+  }
+  div.form {clear: both;}    
+</style>
+
+<p i18n:translate="">
+Look here! Welcome to the portal.
+Here are some simple steps to complete your registration.
+</p>
+
+<ul>
+  <li i18n:translate="">Enter your personal information, please complete the address information.</li>
+  <li i18n:translate="">Enter information from your social networks.</li>
+</ul>
+
+<p>TODO</p>
+
+</tal:block>

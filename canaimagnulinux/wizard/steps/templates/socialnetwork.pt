@@ -1,0 +1,103 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="collective.z3cform.wizard"
+      tal:omit-tag="">
+  
+<tal:widgets repeat="widget view/widgets/values">
+  <div class="row"
+       tal:define="hidden python:widget.mode == 'hidden'"
+       tal:omit-tag="hidden">
+
+    <metal:field use-macro="context/@@ploneform-macros/field" />
+    
+  </div>
+</tal:widgets>
+
+<script type="text/javascript">
+$(function($){
+  $( "#read_more" ).click(function() {
+    $( ".read_more" ).toggle( "slow", function() {
+      // Animation complete.
+    });
+  });
+
+  // IRC
+  $('#personalinfo-widgets-irc').attr('placeholder', $('#formfield-personalinfo-widgets-irc  label').text().trim());
+  $('#formfield-personalinfo-widgets-irc label').remove();
+
+  // Telegram
+  $('#personalinfo-widgets-telegram').attr('placeholder', $('#formfield-personalinfo-widgets-telegram  label').text().trim());
+  $('#formfield-personalinfo-widgets-telegram label').remove();
+
+  // Skype
+  $('#personalinfo-widgets-skype').attr('placeholder', $('#formfield-personalinfo-widgets-skype  label').text().trim());
+  $('#formfield-personalinfo-widgets-skype label').remove();
+
+  // Twitter
+  $('#personalinfo-widgets-twitter').attr('placeholder', $('#formfield-personalinfo-widgets-twitter  label').text().trim());
+  $('#formfield-personalinfo-widgets-twitter label').remove();
+
+  // Instagram
+  $('#address-widgets-instagram').attr('placeholder', $('#formfield-address-widgets-instagram label').text().trim());
+  $('#formfield-address-widgets-instagram label').remove();
+
+  // Facebook
+  $('#address-widgets-facebook').attr('placeholder', $('#formfield-address-widgets-facebook label').text().trim());
+  $('#formfield-address-widgets-facebook label').remove();
+});
+</script>
+
+<style>
+  li.wizard-step-link { 
+    float: left;
+    display: block;
+    padding: 5px;ß
+  }
+  li.selected {
+    font-weight: bold;
+  }
+  div.form {clear: both;}
+</style>
+
+<tal:groups define="groups nocall:view/groups|nothing" repeat="group groups">
+  <fieldset class="group" tal:condition="group/widgets" tal:attributes="id string:fieldset-${group/prefix}">
+    <legend tal:content="group/label" />
+
+    <div tal:define="errors group/widgets/errors" tal:condition="errors">
+        <div tal:repeat="error errors">
+            <tal:block
+                condition="not:nocall:error/widget"
+                replace="structure error/render"
+                />
+        </div>
+    </div>
+
+    <tal:widgets repeat="widget group/widgets/values">
+      <div class="row"
+           tal:define="hidden python:widget.mode == 'hidden'"
+           tal:omit-tag="hidden">
+
+        <metal:field use-macro="context/@@ploneform-macros/field" />
+
+      </div>
+    </tal:widgets>
+  </fieldset>
+</tal:groups>
+
+<metal:use use-macro="context/@@ploneform-macros/actions" />
+
+<div tal:repeat="form view/subforms"
+     tal:content="structure form/render">
+</div>
+
+<p style="font-size: small; cursor: pointer;" id="read_more"
+   i18n:domain="canaimagnulinux.wizard" i18n:translate="">Information on social networks details</p>
+<div style="display: none; -webkit-border-radius: 6px; border: 1px solid gold"
+     class="read_more" i18n:domain="canaimagnulinux.wizard">
+  <h3 i18n:translate="">Data protection and the treatment of personal data</h3>
+  <p i18n:translate="">TODO</p>
+</div>  
+
+</html>
