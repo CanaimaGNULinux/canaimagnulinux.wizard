@@ -1,0 +1,181 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-08-22 22:15+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: canaimagnulinux.wizard\n"
+
+#: ./steps/personaldata.py:41
+msgid "Address 1"
+msgstr ""
+
+#: ./steps/personaldata.py:42
+msgid "Address 2"
+msgstr ""
+
+#: ./steps/personaldata.py:46
+msgid "Address Details"
+msgstr ""
+
+#: ./steps/personaldata.py:32
+msgid "Birthdate"
+msgstr ""
+
+#: ./steps/socialnetwork.py:32
+msgid "Chats Information"
+msgstr ""
+
+#: ./steps/personaldata.py:44
+msgid "City"
+msgstr ""
+
+#: ./steps/personaldata.py:43
+msgid "Country"
+msgstr ""
+
+#: ./steps/personaldata.py:55
+msgid "Current position"
+msgstr ""
+
+#: ./steps/templates/personaldata.pt:107
+#: ./steps/templates/socialnetwork.pt:99
+msgid "Data protection and the treatment of personal data"
+msgstr ""
+
+#: ./steps/templates/intro.pt:22
+msgid "Enter information from your social networks."
+msgstr ""
+
+#: ./steps/templates/intro.pt:21
+msgid "Enter your personal information, please complete the address information."
+msgstr ""
+
+#: ./steps/socialnetwork.py:40
+msgid "Facebook account"
+msgstr ""
+
+#: ./steps/personaldata.py:31
+msgid "Gender"
+msgstr ""
+
+#: ./steps/socialnetwork.py:28
+msgid "IRC nickname"
+msgstr ""
+
+#: ./steps/templates/personaldata.pt:103
+msgid "Information on data treatment"
+msgstr ""
+
+#: ./steps/templates/socialnetwork.pt:95
+msgid "Information on social networks details"
+msgstr ""
+
+#: ./steps/personaldata.py:65
+msgid "Input your personal data address and work details"
+msgstr ""
+
+#: ./steps/socialnetwork.py:49
+msgid "Input your social networks details"
+msgstr ""
+
+#: ./steps/socialnetwork.py:39
+msgid "Instagram account"
+msgstr ""
+
+#: ./steps/personaldata.py:52
+msgid "Institution / Organization"
+msgstr ""
+
+#: ./steps/personaldata.py:53
+msgid "Institution address"
+msgstr ""
+
+#: ./wizard.py:39
+msgid "Introduction"
+msgstr ""
+
+#: ./steps/templates/intro.pt:15
+msgid "Look here! Welcome to the portal. Here are some simple steps to complete your registration."
+msgstr ""
+
+#: ./steps/personaldata.py:33
+msgid "Mobile"
+msgstr ""
+
+#: ./steps/personaldata.py:30
+msgid "Name"
+msgstr ""
+
+#: ./steps/templates/outro.pt:19
+msgid "Now you are ready and you can start to explore and participate in the portal. Is there something you want to change or add to find all the \"Settings\" menu. Please click <a href=\"${DYNAMIC_CONTENT}\">here</a> to view your pages."
+msgstr ""
+
+#: ./steps/personaldata.py:54
+msgid "Office phone"
+msgstr ""
+
+#: ./steps/personaldata.py:64
+msgid "Personal data, address and work details"
+msgstr ""
+
+#: ./steps/personaldata.py:35
+msgid "Personal information"
+msgstr ""
+
+#: ./steps/personaldata.py:56
+msgid "Profession"
+msgstr ""
+
+#: ./steps/socialnetwork.py:30
+msgid "Skype account"
+msgstr ""
+
+#: ./steps/socialnetwork.py:42
+msgid "Social Network Information"
+msgstr ""
+
+#: ./steps/socialnetwork.py:48
+msgid "Social Network accounts"
+msgstr ""
+
+#: ./wizard.py:69
+msgid "Start"
+msgstr ""
+
+#: ./steps/templates/personaldata.pt:108
+#: ./steps/templates/socialnetwork.pt:100
+msgid "TODO"
+msgstr ""
+
+#: ./steps/socialnetwork.py:29
+msgid "Telegram account"
+msgstr ""
+
+#: ./wizard.py:52
+msgid "Thanks!"
+msgstr ""
+
+#: ./steps/socialnetwork.py:38
+msgid "Twitter nickname"
+msgstr ""
+
+#: ./steps/templates/outro.pt:15
+msgid "Well that was it!"
+msgstr ""
+
+#: ./steps/personaldata.py:58
+msgid "Work Details"
+msgstr ""
+
