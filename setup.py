@@ -2,12 +2,14 @@ from setuptools import setup, find_packages
 import os
 
 version = '0.1'
+long_description = open("README.rst").read() + "\n" + \
+                   open(os.path.join("docs", "INSTALL.txt")).read() + "\n" + \
+                   open(os.path.join("docs", "HISTORY.txt")).read()
 
 setup(name='canaimagnulinux.wizard',
       version=version,
       description="Wizard para llenar el perfil de usuario del portal Canaima GNU/Linux",
-      long_description=open("README.rst").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
