@@ -64,6 +64,6 @@ Sobre todo este producto es inofensivo!!!
     :alt: Travis CI badge
     :target: http://travis-ci.org/CanaimaGNULinux/canaimagnulinux.wizard
 
-.. image:: https://coveralls.io/repos/CanaimaGNULinux/canaimagnulinux.wizard/badge.png?branch=master
+.. image:: https://coveralls.io/repos/CanaimaGNULinux/canaimagnulinux.wizard/badge.svg?branch=master&service=github
     :alt: Coveralls badge
-    :target: https://coveralls.io/r/CanaimaGNULinux/canaimagnulinux.wizard
+    :target: https://coveralls.io/github/CanaimaGNULinux/canaimagnulinux.wizard?branch=master
