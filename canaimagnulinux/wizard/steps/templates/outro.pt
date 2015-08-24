@@ -1,7 +1,7 @@
 <tal:block i18n:domain="canaimagnulinux.wizard"
            tal:define="portal_url context/portal_url;">
 <style>
-  li.wizard-step-link { 
+  li.wizard-step-link {
     float: left;
     display: block;
     padding: 5px;ß
@@ -9,7 +9,9 @@
   li.selected {
     font-weight: bold;
   }
-  div.form {clear: both;}    
+  div.form {
+    clear: both;
+  }
   </style>
 
 <h4 i18n:translate="">Well that was it!</h4>

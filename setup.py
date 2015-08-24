@@ -27,7 +27,14 @@ setup(name='canaimagnulinux.wizard',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'five.grok',
+          'plone.api',
           # -*- Extra requirements: -*-
+          'canaimagnulinux.userdata',
+          'collective.beaker',
+          'collective.z3cform.wizard',
+          'plone.namedfile',
+          'plone.formwidget.namedfile',
       ],
       extras_require={
           'test': [

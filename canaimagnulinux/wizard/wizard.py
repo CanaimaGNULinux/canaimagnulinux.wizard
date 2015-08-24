@@ -1,24 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from Products.statusmessages.adapter import _decodeCookieValue
-from Products.statusmessages.interfaces import IStatusMessage
-
 from canaimagnulinux.wizard import MessageFactory as _
 from canaimagnulinux.wizard.steps.personaldata import PersonalDataStep
 from canaimagnulinux.wizard.steps.socialnetwork import SocialNetworkStep
 from collective.beaker.interfaces import ISession
 from collective.z3cform.wizard import wizard
 
-from five import grok
-
 from plone import api
 from plone.z3cform.layout import FormWrapper
-
-from z3c.form import field
-from z3c.form import form
-from zope import schema
-from zope.component.hooks import getSite
-from zope.component import getMultiAdapter
 
 try:
     from zope.browserpage import viewpagetemplatefile
@@ -33,6 +22,7 @@ except ImportError:
 - Outro step
 '''
 
+
 class IntroStep(wizard.Step):
     prefix = 'intro'
     fields = {}
@@ -45,6 +35,7 @@ class IntroStep(wizard.Step):
         self.sessionmanager = session
 
         super(IntroStep, self).__init__(context, request, wizard)
+
 
 class OutroStep(wizard.Step):
     prefix = 'outro'
@@ -62,7 +53,7 @@ class OutroStep(wizard.Step):
     def get_url(self):
 
         url = self.wizard.get_finish_url()
-        return url  
+        return url
 
 
 class Wizard(wizard.Wizard):
@@ -73,9 +64,8 @@ class Wizard(wizard.Wizard):
         # Use collective.beaker for session managment
         session = ISession(self.request, None)
         self.sessionmanager = session
-        
-        super(Wizard, self).update()
 
+        super(Wizard, self).update()
 
     @property
     def steps(self):
@@ -87,24 +77,25 @@ class Wizard(wizard.Wizard):
         for step in self.activeSteps:
             if hasattr(step, 'apply'):
                 step.apply(pfg, initial_finish=initial_finish)
-    
+
     def showClear(self):
         return False
 
     def get_finish_url(self):
-        return getSite().absolute_url()
+        return api.portal.get().absolute_url()
 
     def finish(self):
         super(Wizard, self).finish()
         url = self.get_finish_url()
         return self.request.response.redirect(url)
 
+
 class WizardView(FormWrapper):
     form = Wizard
-    
+
     def __init__(self, context, request):
         FormWrapper.__init__(self, context, request)
         request.set('disable_border', 1)
-    
+
     def absolute_url(self):
         return '%s/%s' % (self.context.absolute_url(), self.__name__)

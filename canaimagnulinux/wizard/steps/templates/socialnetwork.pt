@@ -4,14 +4,14 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="collective.z3cform.wizard"
       tal:omit-tag="">
-  
+
 <tal:widgets repeat="widget view/widgets/values">
   <div class="row"
        tal:define="hidden python:widget.mode == 'hidden'"
        tal:omit-tag="hidden">
 
     <metal:field use-macro="context/@@ploneform-macros/field" />
-    
+
   </div>
 </tal:widgets>
 
@@ -50,7 +50,7 @@ $(function($){
 </script>
 
 <style>
-  li.wizard-step-link { 
+  li.wizard-step-link {
     float: left;
     display: block;
     padding: 5px;ß
@@ -98,6 +98,6 @@ $(function($){
      class="read_more" i18n:domain="canaimagnulinux.wizard">
   <h3 i18n:translate="">Data protection and the treatment of personal data</h3>
   <p i18n:translate="">TODO</p>
-</div>  
+</div>
 
 </html>

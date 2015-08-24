@@ -1,17 +1,15 @@
 # -*- coding: utf-8 -*-
 
 from canaimagnulinux.wizard import MessageFactory as _
+# from canaimagnulinux.wizard.interfaces import IPersonalInfo
 from collective.beaker.interfaces import ISession
 from collective.z3cform.wizard import wizard
 
 from plone import api
-from plone.namedfile.field import NamedImage
 from plone.z3cform.fieldsets import group
 
-from z3c.form import field, form
+from z3c.form import field
 from zope import schema
-from zope.component import getUtility
-from zope.component.hooks import getSite
 
 try:
     from zope.browserpage import viewpagetemplatefile
@@ -25,23 +23,24 @@ logger = logging.getLogger(__name__)
 
 class PersonalInfoGroup(group.Group):
 
-    # fix so that default user image is not wrapped in acquisition before adding that to the wizard. It can not be pickled. (http://pastie.org/8474225)
     fields = field.Fields(
-        schema.TextLine(__name__='fullname', title=_(u'Name'), required=False),
-        schema.TextLine(__name__='gender', title=_(u'Gender'), required=False),
-        schema.TextLine(__name__='birthdate', title=_(u'Birthdate'), required=False),
-        schema.TextLine(__name__='mobile', title=_(u'Mobile'), required=False),
+        schema.TextLine(__name__='fullname', title=u'Name', required=False),
+        schema.TextLine(__name__='gender', title=u'Gender', required=False),
+        schema.TextLine(__name__='birthdate', title=u'Birthdate', required=False),
+        schema.TextLine(__name__='mobile', title=u'Mobile', required=False),
     )
+    # schema = IPersonalInfo
+    # fields = field.Fields(IPersonalInfo)
     label = _(u'Personal information')
     prefix = 'personalinfo'
 
 
 class AddressGroup(group.Group):
     fields = field.Fields(
-        schema.TextLine(__name__='address1', title=_(u'Address 1'), required=False),
-        schema.TextLine(__name__='address2', title=_(u'Address 2'), required=False),
-        schema.TextLine(__name__='country', title=_(u'Country'), required=False),
-        schema.TextLine(__name__='city', title=_(u'City'), required=False),
+        schema.TextLine(__name__='address1', title=u'Address 1', required=False),
+        schema.TextLine(__name__='address2', title=u'Address 2', required=False),
+        schema.TextLine(__name__='country', title=u'Country', required=False),
+        schema.TextLine(__name__='city', title=u'City', required=False),
     )
     label = _(u'Address Details')
     prefix = 'address'
@@ -49,11 +48,11 @@ class AddressGroup(group.Group):
 
 class WorkGroup(group.Group):
     fields = field.Fields(
-        schema.TextLine(__name__='institution', title=_(u'Institution / Organization'), required=False),
-        schema.TextLine(__name__='instadd', title=_(u'Institution address'), required=False),
-        schema.TextLine(__name__='officephone', title=_(u'Office phone'), required=True),
-        schema.TextLine(__name__='position', title=_(u'Current position'), required=False),
-        schema.TextLine(__name__='profession', title=_(u'Profession'), required=False),
+        schema.TextLine(__name__='institution', title=u'Institution / Organization', required=False),
+        schema.TextLine(__name__='instadd', title=u'Institution address', required=False),
+        schema.TextLine(__name__='officephone', title=u'Office phone', required=True),
+        schema.TextLine(__name__='position', title=u'Current position', required=False),
+        schema.TextLine(__name__='profession', title=u'Profession', required=False),
     )
     label = _(u'Work Details')
     prefix = 'work'
@@ -154,9 +153,9 @@ class PersonalDataStep(wizard.GroupStep):
                 profession = None
             data['profession'] = profession
 
-
     def apply(self, context, initial_finish=False):
         data = self.getContent()
+        return data
 
     def applyChanges(self, data):
         member = api.user.get_current()
@@ -168,10 +167,9 @@ class PersonalDataStep(wizard.GroupStep):
             'address1': data['address1'],
             'address2': data['address2'],
             'country': data['country'],
-            'city': data['city']
+            'city': data['city'],
             'institution': data['institution'],
             'instadd': data['instadd'],
             'officephone': data['officephone'],
-            'profession': data['profession'],
-            }
+            'profession': data['profession']}
         )

@@ -11,6 +11,7 @@ import unittest
 
 PROJECTNAME = 'canaimagnulinux.wizard'
 
+
 class BaseTestCase(unittest.TestCase):
     """ Base test case to be used by other tests. """
 

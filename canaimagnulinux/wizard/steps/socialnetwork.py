@@ -8,10 +8,7 @@ from plone import api
 from plone.z3cform.fieldsets import group
 
 from z3c.form import field
-from z3c.form import form
 from zope import schema
-from zope.component import getUtility
-from zope.component.hooks import getSite
 
 try:
     from zope.browserpage import viewpagetemplatefile
@@ -25,9 +22,9 @@ logger = logging.getLogger(__name__)
 
 class ChatGroup(group.Group):
     fields = field.Fields(
-        schema.TextLine(__name__='irc', title=_(u'IRC nickname'), required=True),
-        schema.TextLine(__name__='telegram', title=_(u'Telegram account'), required=False),
-        schema.TextLine(__name__='skype', title=_(u'Skype account'), required=False),
+        schema.TextLine(__name__='irc', title=u'IRC nickname', required=True),
+        schema.TextLine(__name__='telegram', title=u'Telegram account', required=False),
+        schema.TextLine(__name__='skype', title=u'Skype account', required=False),
     )
     label = _(u'Chats Information')
     prefix = 'chats'
@@ -35,12 +32,12 @@ class ChatGroup(group.Group):
 
 class SocialNetworkGroup(group.Group):
     fields = field.Fields(
-        schema.TextLine(__name__='twitter', title=_(u'Twitter nickname'), required=True),
-        schema.TextLine(__name__='instagram', title=_(u'Instagram account'), required=False),
-        schema.TextLine(__name__='facebook', title=_(u'Facebook account'), required=False),
+        schema.TextLine(__name__='twitter', title=u'Twitter nickname', required=True),
+        schema.TextLine(__name__='instagram', title=u'Instagram account', required=False),
+        schema.TextLine(__name__='facebook', title=u'Facebook account', required=False),
     )
     label = _(u'Social Network Information')
-    prefix = 'address'
+    prefix = 'socialnetwork'
 
 
 class SocialNetworkStep(wizard.GroupStep):
@@ -48,7 +45,7 @@ class SocialNetworkStep(wizard.GroupStep):
     label = _(u'Social Network accounts')
     description = _(u'Input your social networks details')
 
-    template = viewpagetemplatefile.ViewPageTemplateFile('templates/address.pt')
+    template = viewpagetemplatefile.ViewPageTemplateFile('templates/socialnetwork.pt')
     fields = field.Fields()
     # groups = [ChatGroup, SocialNetworkGroup]
     groups = [ChatGroup]
@@ -64,7 +61,7 @@ class SocialNetworkStep(wizard.GroupStep):
         member = api.user.get_current()
         data = self.getContent()
 
-        # Personal info group
+        # Chats group
         if not data.get('irc', None):
             irc = member.getProperty('irc')
             if type(irc).__name__ == 'object':
@@ -83,13 +80,13 @@ class SocialNetworkStep(wizard.GroupStep):
                 skype = None
             data['skype'] = skype
 
+        # Social Network group
         if not data.get('twitter', None):
             twitter = member.getProperty('twitter')
             if type(twitter).__name__ == 'object':
                 twitter = None
             data['twitter'] = twitter
 
-        # Address group
         if not data.get('instagram', None):
             instagram = member.getProperty('instagram')
             if type(instagram).__name__ == 'object':
@@ -104,6 +101,7 @@ class SocialNetworkStep(wizard.GroupStep):
 
     def apply(self, context, initial_finish=False):
         data = self.getContent()
+        return data
 
     def applyChanges(self, data):
         member = api.user.get_current()
@@ -113,6 +111,5 @@ class SocialNetworkStep(wizard.GroupStep):
             'skype': data['skype'],
             'twitter': data['twitter'],
             'instagram': data['instagram'],
-            'facebook': data['facebook'],
-            }
+            'facebook': data['facebook']}
         )
