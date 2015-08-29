@@ -14,6 +14,49 @@ Características
 
 TODO.
 
+
+Instalación
+===========
+
+Este proyecto debe ser instalado usando configuraciones buildout. Debe leer el archivo
+``INSTALL.txt`` en la carpeta ``docs`` de este producto.
+
+
+Insignias de calidad
+--------------------
+
+Sobre todo este producto es inofensivo!!!
+
+.. image:: https://d2weczhvl823v0.cloudfront.net/CanaimaGNULinux/canaimagnulinux.web.policy/trend.png
+   :alt: Bitdeli badge
+   :target: https://bitdeli.com/free
+
+.. image:: https://travis-ci.org/CanaimaGNULinux/canaimagnulinux.web.policy.svg?branch=master
+    :alt: Travis CI badge
+   :target: http://travis-ci.org/CanaimaGNULinux/canaimagnulinux.wizard
+
+.. image:: https://coveralls.io/repos/CanaimaGNULinux/canaimagnulinux.wizard/badge.svg?branch=master&service=github
+    :alt: Coveralls badge
+   :target: https://coveralls.io/github/CanaimaGNULinux/canaimagnulinux.wizard?branch=master
+
+Dependencias del sitio
+----------------------
+
+Dependencias usadas en el sitio de Canaima GNU/Linux.
+
+.. list-table:: Dependencias extras
+   :widths: 10 10 10 10
+   :header-rows: 1
+
+   * - Nombre de paquete
+     - Versión
+     - Pruebas
+     - Pruebas de cobertura
+   * - canaimagnulinux.userdata
+     - |canaimagnulinux.userdata.v|
+     - |canaimagnulinux.userdata.t|
+     - |canaimagnulinux.userdata.c|
+
 Creación
 --------
 
@@ -55,15 +98,9 @@ Este proyecto esta licenciado bajo la GNU General Public License v2 (GPLv2).
 
 ----
 
-Calidad del proyecto
---------------------
-
-Sobre todo este producto es inofensivo!!!
-
-.. image:: https://secure.travis-ci.org/CanaimaGNULinux/canaimagnulinux.wizard.png?branch=master
-    :alt: Travis CI badge
-    :target: http://travis-ci.org/CanaimaGNULinux/canaimagnulinux.wizard
-
-.. image:: https://coveralls.io/repos/CanaimaGNULinux/canaimagnulinux.wizard/badge.svg?branch=master&service=github
-    :alt: Coveralls badge
-    :target: https://coveralls.io/github/CanaimaGNULinux/canaimagnulinux.wizard?branch=master
+.. |canaimagnulinux.userdata.v| image:: http://img.shields.io/pypi/v/canaimagnulinux.userdata.svg
+   :target: https://pypi.python.org/pypi/canaimagnulinux.userdata
+.. |canaimagnulinux.userdata.t| image:: https://secure.travis-ci.org/CanaimaGNULinux/canaimagnulinux.userdata.png
+   :target: http://travis-ci.org/CanaimaGNULinux/canaimagnulinux.userdata
+.. |canaimagnulinux.userdata.c| image:: https://coveralls.io/repos/CanaimaGNULinux/canaimagnulinux.userdata/badge.png?branch=master
+   :target: https://coveralls.io/r/CanaimaGNULinux/canaimagnulinux.userdata
