@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from canaimagnulinux.wizard import MessageFactory as _
-from canaimagnulinux.wizard.steps.personaldata import PersonalDataStep
-from canaimagnulinux.wizard.steps.socialnetwork import SocialNetworkStep
+from canaimagnulinux.wizard.browser.personaldata import PersonalDataStep
+from canaimagnulinux.wizard.browser.socialnetwork import SocialNetworkStep
+from canaimagnulinux.wizard.utils import CanaimaGnuLinuxWizardMF as _
 from collective.beaker.interfaces import ISession
 from collective.z3cform.wizard import wizard
 
@@ -27,7 +27,7 @@ class IntroStep(wizard.Step):
     prefix = 'intro'
     fields = {}
     label = _(u'Introduction')
-    index = viewpagetemplatefile.ViewPageTemplateFile('steps/templates/intro.pt')
+    index = viewpagetemplatefile.ViewPageTemplateFile('templates/intro.pt')
 
     def __init__(self, context, request, wizard):
         # Use collective.beaker for session managment
@@ -41,7 +41,7 @@ class OutroStep(wizard.Step):
     prefix = 'outro'
     fields = {}
     label = _(u'Thanks!')
-    index = viewpagetemplatefile.ViewPageTemplateFile('steps/templates/outro.pt')
+    index = viewpagetemplatefile.ViewPageTemplateFile('templates/outro.pt')
 
     def __init__(self, context, request, wizard):
         # Use collective.beaker for session managment

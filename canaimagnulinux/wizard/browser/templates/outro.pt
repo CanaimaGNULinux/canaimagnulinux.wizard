@@ -18,7 +18,8 @@
 <p i18n:translate="">Now you are ready and you can start to explore
   and participate in the portal. Is there something you want to change
   or add to find all the "Settings" menu. Please click
-  <a tal:attributes="href string:${portal_url}/@@personal-information">here</a>
+  <a i18n:name="click_here"
+     tal:attributes="href string:${portal_url}/@@personal-information">here</a>
   to view your pages.
 </p>
 

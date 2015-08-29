@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: canaimagnulinux.wizard\n"
-"POT-Creation-Date: 2015-08-22 22:15+0000\n"
+"POT-Creation-Date: 2015-08-29 04:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,165 +15,165 @@ msgstr ""
 "Domain: canaimagnulinux.wizard\n"
 "X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 
-#: ./steps/personaldata.py:41
+#: ./interfaces.py:34
 msgid "Address 1"
 msgstr ""
 
-#: ./steps/personaldata.py:42
+#: ./interfaces.py:39
 msgid "Address 2"
 msgstr ""
 
-#: ./steps/personaldata.py:46
+#: ./browser/personaldata.py:35
 msgid "Address Details"
 msgstr ""
 
-#: ./steps/personaldata.py:32
+#: ./interfaces.py:21
 msgid "Birthdate"
 msgstr ""
 
-#: ./steps/socialnetwork.py:32
+#: ./browser/socialnetwork.py:26
 msgid "Chats Information"
 msgstr ""
 
-#: ./steps/personaldata.py:44
+#: ./interfaces.py:49
 msgid "City"
 msgstr ""
 
-#: ./steps/personaldata.py:43
+#: ./interfaces.py:44
 msgid "Country"
 msgstr ""
 
-#: ./steps/personaldata.py:55
+#: ./interfaces.py:72
 msgid "Current position"
 msgstr ""
 
-#: ./steps/templates/personaldata.pt:107
-#: ./steps/templates/socialnetwork.pt:99
+#: ./browser/templates/personaldata.pt:107
+#: ./browser/templates/socialnetwork.pt:99
 msgid "Data protection and the treatment of personal data"
 msgstr ""
 
-#: ./steps/templates/intro.pt:22
+#: ./browser/templates/intro.pt:24
 msgid "Enter information from your social networks."
 msgstr ""
 
-#: ./steps/templates/intro.pt:21
+#: ./browser/templates/intro.pt:23
 msgid "Enter your personal information, please complete the address information."
 msgstr ""
 
-#: ./steps/socialnetwork.py:40
+#: ./interfaces.py:113
 msgid "Facebook account"
 msgstr ""
 
-#: ./steps/personaldata.py:31
+#: ./interfaces.py:16
 msgid "Gender"
 msgstr ""
 
-#: ./steps/socialnetwork.py:28
+#: ./interfaces.py:85
 msgid "IRC nickname"
 msgstr ""
 
-#: ./steps/templates/personaldata.pt:103
+#: ./browser/templates/personaldata.pt:103
 msgid "Information on data treatment"
 msgstr ""
 
-#: ./steps/templates/socialnetwork.pt:95
+#: ./browser/templates/socialnetwork.pt:95
 msgid "Information on social networks details"
 msgstr ""
 
-#: ./steps/personaldata.py:65
+#: ./browser/personaldata.py:48
 msgid "Input your personal data address and work details"
 msgstr ""
 
-#: ./steps/socialnetwork.py:49
+#: ./browser/socialnetwork.py:39
 msgid "Input your social networks details"
 msgstr ""
 
-#: ./steps/socialnetwork.py:39
+#: ./interfaces.py:108
 msgid "Instagram account"
 msgstr ""
 
-#: ./steps/personaldata.py:52
+#: ./interfaces.py:57
 msgid "Institution / Organization"
 msgstr ""
 
-#: ./steps/personaldata.py:53
+#: ./interfaces.py:62
 msgid "Institution address"
 msgstr ""
 
-#: ./wizard.py:39
+#: ./browser/wizard.py:29
 msgid "Introduction"
 msgstr ""
 
-#: ./steps/templates/intro.pt:15
+#: ./browser/templates/intro.pt:17
 msgid "Look here! Welcome to the portal. Here are some simple steps to complete your registration."
 msgstr ""
 
-#: ./steps/personaldata.py:33
+#: ./interfaces.py:26
 msgid "Mobile"
 msgstr ""
 
-#: ./steps/personaldata.py:30
+#: ./interfaces.py:11
 msgid "Name"
 msgstr ""
 
-#: ./steps/templates/outro.pt:19
-msgid "Now you are ready and you can start to explore and participate in the portal. Is there something you want to change or add to find all the \"Settings\" menu. Please click <a href=\"${DYNAMIC_CONTENT}\">here</a> to view your pages."
+#: ./browser/templates/outro.pt:21
+msgid "Now you are ready and you can start to explore and participate in the portal. Is there something you want to change or add to find all the \"Settings\" menu. Please click ${click_here} to view your pages."
 msgstr ""
 
-#: ./steps/personaldata.py:54
+#: ./interfaces.py:67
 msgid "Office phone"
 msgstr ""
 
-#: ./steps/personaldata.py:64
+#: ./browser/personaldata.py:47
 msgid "Personal data, address and work details"
 msgstr ""
 
-#: ./steps/personaldata.py:35
+#: ./browser/personaldata.py:28
 msgid "Personal information"
 msgstr ""
 
-#: ./steps/personaldata.py:56
+#: ./interfaces.py:77
 msgid "Profession"
 msgstr ""
 
-#: ./steps/socialnetwork.py:30
+#: ./interfaces.py:95
 msgid "Skype account"
 msgstr ""
 
-#: ./steps/socialnetwork.py:42
+#: ./browser/socialnetwork.py:32
 msgid "Social Network Information"
 msgstr ""
 
-#: ./steps/socialnetwork.py:48
+#: ./browser/socialnetwork.py:38
 msgid "Social Network accounts"
 msgstr ""
 
-#: ./wizard.py:69
+#: ./browser/wizard.py:60
 msgid "Start"
 msgstr ""
 
-#: ./steps/templates/personaldata.pt:108
-#: ./steps/templates/socialnetwork.pt:100
+#: ./browser/templates/personaldata.pt:108
+#: ./browser/templates/socialnetwork.pt:100
 msgid "TODO"
 msgstr ""
 
-#: ./steps/socialnetwork.py:29
+#: ./interfaces.py:90
 msgid "Telegram account"
 msgstr ""
 
-#: ./wizard.py:52
+#: ./browser/wizard.py:43
 msgid "Thanks!"
 msgstr ""
 
-#: ./steps/socialnetwork.py:38
+#: ./interfaces.py:103
 msgid "Twitter nickname"
 msgstr ""
 
-#: ./steps/templates/outro.pt:15
+#: ./browser/templates/outro.pt:17
 msgid "Well that was it!"
 msgstr ""
 
-#: ./steps/personaldata.py:58
+#: ./browser/personaldata.py:41
 msgid "Work Details"
 msgstr ""
 

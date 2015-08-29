@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from canaimagnulinux.wizard import MessageFactory as _
-# from canaimagnulinux.wizard.interfaces import IPersonalInfo
+from canaimagnulinux.wizard.interfaces import IAddress
+from canaimagnulinux.wizard.interfaces import IPersonalInfo
+from canaimagnulinux.wizard.interfaces import IWork
+from canaimagnulinux.wizard.utils import CanaimaGnuLinuxWizardMF as _
 from collective.beaker.interfaces import ISession
 from collective.z3cform.wizard import wizard
 
@@ -9,7 +11,7 @@ from plone import api
 from plone.z3cform.fieldsets import group
 
 from z3c.form import field
-from zope import schema
+# from zope import schema
 
 try:
     from zope.browserpage import viewpagetemplatefile
@@ -22,40 +24,22 @@ logger = logging.getLogger(__name__)
 
 
 class PersonalInfoGroup(group.Group):
-
-    fields = field.Fields(
-        schema.TextLine(__name__='fullname', title=u'Name', required=False),
-        schema.TextLine(__name__='gender', title=u'Gender', required=False),
-        schema.TextLine(__name__='birthdate', title=u'Birthdate', required=False),
-        schema.TextLine(__name__='mobile', title=u'Mobile', required=False),
-    )
-    # schema = IPersonalInfo
-    # fields = field.Fields(IPersonalInfo)
-    label = _(u'Personal information')
     prefix = 'personalinfo'
+    label = _(u'Personal information')
+    # schema = IPersonalInfo
+    fields = field.Fields(IPersonalInfo)
 
 
 class AddressGroup(group.Group):
-    fields = field.Fields(
-        schema.TextLine(__name__='address1', title=u'Address 1', required=False),
-        schema.TextLine(__name__='address2', title=u'Address 2', required=False),
-        schema.TextLine(__name__='country', title=u'Country', required=False),
-        schema.TextLine(__name__='city', title=u'City', required=False),
-    )
-    label = _(u'Address Details')
     prefix = 'address'
+    label = _(u'Address Details')
+    fields = field.Fields(IAddress)
 
 
 class WorkGroup(group.Group):
-    fields = field.Fields(
-        schema.TextLine(__name__='institution', title=u'Institution / Organization', required=False),
-        schema.TextLine(__name__='instadd', title=u'Institution address', required=False),
-        schema.TextLine(__name__='officephone', title=u'Office phone', required=True),
-        schema.TextLine(__name__='position', title=u'Current position', required=False),
-        schema.TextLine(__name__='profession', title=u'Profession', required=False),
-    )
-    label = _(u'Work Details')
     prefix = 'work'
+    label = _(u'Work Details')
+    fields = field.Fields(IWork)
 
 
 class PersonalDataStep(wizard.GroupStep):

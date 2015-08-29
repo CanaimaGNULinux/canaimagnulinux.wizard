@@ -8,6 +8,11 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="canaimagnulinux.wizard">
 
+  <include package="Products.CMFCore" file="permissions.zcml" />
+  <include package="plone.app.z3cform" />
+  <include package="collective.z3cform.wizard" />
+  <include package=".browser" />
+
   <five:registerPackage package="." initialize=".initialize" />
 
   <i18n:registerTranslations directory="locales" />
@@ -29,12 +34,5 @@
   <grok:grok package="." />
 
   <!-- -*- extra stuff goes here -*- -->
-
-  <browser:page
-      name="wizard"
-      for="Products.CMFCore.interfaces.ISiteRoot"
-      class=".wizard.WizardView"
-      permission="cmf.SetOwnPassword"
-      />
 
 </configure>

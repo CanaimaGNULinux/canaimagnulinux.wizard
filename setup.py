@@ -34,6 +34,7 @@ setup(name='canaimagnulinux.wizard',
           'collective.beaker',
           'collective.z3cform.wizard',
           'plone.namedfile',
+          'plone.app.z3cform',
           'plone.formwidget.namedfile',
       ],
       extras_require={

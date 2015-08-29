@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from canaimagnulinux.wizard import MessageFactory as _
+from canaimagnulinux.wizard.interfaces import IChat
+from canaimagnulinux.wizard.interfaces import ISocialNetwork
+from canaimagnulinux.wizard.utils import CanaimaGnuLinuxWizardMF as _
 from collective.beaker.interfaces import ISession
 from collective.z3cform.wizard import wizard
 
@@ -8,7 +10,6 @@ from plone import api
 from plone.z3cform.fieldsets import group
 
 from z3c.form import field
-from zope import schema
 
 try:
     from zope.browserpage import viewpagetemplatefile
@@ -21,23 +22,15 @@ logger = logging.getLogger(__name__)
 
 
 class ChatGroup(group.Group):
-    fields = field.Fields(
-        schema.TextLine(__name__='irc', title=u'IRC nickname', required=True),
-        schema.TextLine(__name__='telegram', title=u'Telegram account', required=False),
-        schema.TextLine(__name__='skype', title=u'Skype account', required=False),
-    )
-    label = _(u'Chats Information')
     prefix = 'chats'
+    label = _(u'Chats Information')
+    fields = field.Fields(IChat)
 
 
 class SocialNetworkGroup(group.Group):
-    fields = field.Fields(
-        schema.TextLine(__name__='twitter', title=u'Twitter nickname', required=True),
-        schema.TextLine(__name__='instagram', title=u'Instagram account', required=False),
-        schema.TextLine(__name__='facebook', title=u'Facebook account', required=False),
-    )
-    label = _(u'Social Network Information')
     prefix = 'socialnetwork'
+    label = _(u'Social Network Information')
+    fields = field.Fields(ISocialNetwork)
 
 
 class SocialNetworkStep(wizard.GroupStep):
@@ -47,8 +40,7 @@ class SocialNetworkStep(wizard.GroupStep):
 
     template = viewpagetemplatefile.ViewPageTemplateFile('templates/socialnetwork.pt')
     fields = field.Fields()
-    # groups = [ChatGroup, SocialNetworkGroup]
-    groups = [ChatGroup]
+    groups = [ChatGroup, SocialNetworkGroup]
 
     def __init__(self, context, request, wizard):
         # Use collective.beaker for session managment

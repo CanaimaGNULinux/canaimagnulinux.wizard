@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="canaimagnulinux.wizard">
+
+  <browser:page
+      name="bienvenida"
+      for="Products.CMFCore.interfaces.ISiteRoot"
+      class=".wizard.WizardView"
+      permission="cmf.SetOwnPassword"
+      />
+<!--
+    <browser:page
+        name="wizard"
+        class=".wizard.WizardView"
+        permission="zope2.View"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        />
+-->
+</configure>
